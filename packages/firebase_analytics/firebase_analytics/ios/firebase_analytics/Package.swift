@@ -10,10 +10,8 @@ import PackageDescription
 
 let firebaseSdkVersion: Version = "12.19.0"
 
-// Set FIREBASE_ANALYTICS_WITHOUT_ADID=true to use FirebaseAnalyticsCore.
-// e.g. FIREBASE_ANALYTICS_WITHOUT_ADID=true flutter build ios
-let useWithoutAdId = ProcessInfo.processInfo.environment["FIREBASE_ANALYTICS_WITHOUT_ADID"] != nil
-let analyticsProduct = useWithoutAdId ? "FirebaseAnalyticsCore" : "FirebaseAnalytics"
+// Preserve the app's analytics-without-advertising-ID policy for every build entry point.
+let analyticsProduct = "FirebaseAnalyticsCore"
 
 let package = Package(
   name: "firebase_analytics",
